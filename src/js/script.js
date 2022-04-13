@@ -9,7 +9,7 @@ function copytext(el) {
 }
 
 
-// Scroll в началу сайта
+// Scroll к началу сайта
 $(function() {
     $('.scroll-up').click(function(){
        $('html, body').animate({scrollTop:0}, 'slow');
