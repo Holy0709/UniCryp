@@ -1,0 +1,30 @@
+// Regular 400
+@mixin Regular{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+// SemiBold 600
+@mixin SemiBold{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+// Bold 700
+@mixin Bold{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+// ExtraBold 800
+@mixin ExtraBold{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+}
+
+// Light 300 Italic
+@mixin Light_Italick{
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    font-weight: 300;
+}

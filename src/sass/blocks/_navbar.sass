@@ -1,0 +1,70 @@
+.header
+    .everything-header
+        background-color: $hero-bg
+        height: 70px
+        .logo
+            display: flex
+            margin-top: 9px
+            align-items: flex-end
+            &__title
+                color: $white
+                font-size: 1.125em
+                line-height: 22px
+                +ExtraBold
+            &__text
+                font-size: 0.75em
+                line-height: 15px
+                color: $white
+                +Light_Italick
+        .reg_auth
+            float: right
+            margin-top: 15px
+            .sign
+                margin-right: 10px
+                padding: 12px 18px
+                background-color: $white
+                color: $dark
+                font-size: 0.9375em
+                border-radius: 5px
+                +SemiBold
+                line-height: 20px 
+                    display: none
+            .reg
+                padding: 12px 10px
+                background-color: $red
+                color: $white
+                font-size: 0.9375em
+                border-radius: 5px
+                +SemiBold
+                line-height: 20px 
+    .navbar
+        background-color: $white
+        width: 100%
+        height: 50px
+        border: 1px solid #D8D8D8
+        display: fixed
+        .hideMenu
+            display: flex
+            float: left
+            margin-top: 5px
+            &__items
+                color: $grey
+                font-size: 0.875
+                margin-left: 10px
+                padding: 10px 14px
+                transition: 0.2s
+                &:hover
+                    color: $hero-bg
+        .info
+            display: flex
+            float: right
+            margin-top: 5px
+                font-size: 14px
+            &__items
+                color: $grey
+                font-size: 0.875
+                margin-right: 10px
+                padding: 10px 14px
+                transition: 0.2s
+                &:hover
+                    color: $hero-bg
