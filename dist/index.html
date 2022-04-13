@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniCryp</title>
+
+    <!-- Connect jQuer-->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="https://use.fontawesome.com/e7727969df.js"></script>
+    <!-- Connect Style.css-->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Reset Css-->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- Connect bootstrap-->
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <!-- Fonts Montserrat-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;1,300&amp;display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+  </head>
+  <body class="body"> 
+    <header class="header"> 
+      <div class="everything-header">
+        <div class="container">
+          <div class="row">
+            <div class="col-8">
+              <div class="logo"> <img src="image/logo.svg" alt="alt">
+                <h1 class="logo__title">UniCryp<br><span class="logo__text">мы заботимся о вашей безопасности</span></h1>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="reg_auth">
+                <button class="sign">Войти</button>
+                <button class="reg reg_active">Регистрация</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar">
+        <div class="container"> 
+          <div class="row">
+            <div class="col">
+              <div class="hideMenu"> <a class="hideMenu__items" href="#">Генерация пароля </a><a class="hideMenu__items" href="#">Генерация QR-code</a><a class="hideMenu__items" href="#">Хеширование пароля</a></div>
+            </div>
+            <div class="col-4">
+              <div class="info"><a class="info__items" href="#">Главная</a><a class="info__items" href="#">Контакты</a><a class="info__items" href="#">О нас</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="genpass">
+      <div class="container"> 
+        <h1 class="genpass__title">Создайте безопасный пароль</h1>
+        <p class="genpass__text">Используйте наш генератор пароля для мгновенного<br> создания надежного пароля.</p>
+        <div class="result">
+          <div class="result__info">
+            <span id="result__pass"></span>
+            <button class="result__copy" onclick="copytext('#result__pass')">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="row change-settings">
+          <div class="col-6">
+            <div class="change-settings__title">Изменить настройки пароля:</div>
+            <div class="change-settings__lenght">
+              <label class="lenght__title" for="">Lenght: </label><span id="scale_lenght" class="scale_lenght">8</span>
+              <form class="lenght-form" action="">
+                <input class="lenght-form__scroll" id="form-lenght" type="range" name="" min="1" max="20" sep="1" value="8">
+              </form>
+            </div>
+            <button class="btn change-settings__copy" onclick="copytext('#result__pass')">Копировать<br>Пароль</button>
+            <button class="btn" onclick="document.location='checkPasswordComplexity.html'">Проверить пароль<br>на сложность</button>
+          </div>
+          <div class="col-6">
+            <div class="settings-password"> 
+              <form class="settings-password__items" action=""> 
+                <input id="checkbox_uppercase_letter" type="checkbox" name="" checked>
+                <lable>Uppercase letter</lable>
+              </form>
+              <form class="settings-password__items" action=""> 
+                <input id="checkbox_lower_letter" type="checkbox" name="" checked>
+                <lable>Lower letter</lable>
+              </form>
+              <form class="settings-password__items" action=""> 
+                <input id="checkbox_numbers" type="checkbox" name="" checked>
+                <lable>Numbers</lable>
+              </form>
+              <form class="settings-password__items" action=""> 
+                <input id="checkbox_symbols" type="checkbox" name="">
+                <lable>Symbols</lable>
+              </form>
+              <form class="settings-password__items" action=""> 
+                <input id="checkbox_cyrillic_uppercase_letter" type="checkbox" name="">
+                <lable>Заглавные буквы кириллицы</lable>
+              </form>
+              <form class="settings-password__items" action=""> 
+                <input id="checkbox_cyrillic_lower_letter" type="checkbox" name="">
+                <lable>Маленькие буквы кириллицы</lable>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer"> 
+      <div class="container"> 
+        <div class="row"> 
+          <div class="col-3"> 
+            <div class="scroll-up"><img src="image/scroll-up.svg" alt="scroll-up"></div>
+            <div class="logo"> 
+              <div class="row logo__main"><img class="logo__image" src="image/logo.svg" alt="logo">
+                <h1 class="logo__title">UniCryp </h1>
+              </div>
+              <p class="logo__text">мы заботимся о вашей<br> безопасности</p>
+            </div>
+          </div>
+          <div class="col-2"> 
+            <nav class="programs"> 
+              <h1 class="programs__title">Программы</h1>
+              <li class="programs__items"><a href="#">Генерация пароля</a></li>
+              <li class="programs__items"> <a href="#">Генерация QR-code</a></li>
+              <li class="programs__items"><a href="#">Хеширование пароля</a></li>
+            </nav>
+          </div>
+          <div class="col-1"> 
+            <nav class="contacts"> 
+              <li><a href="#">Главная</a></li>
+              <li> <a href="#">Контакты</a></li>
+              <li><a href="#">О нас</a></li>
+            </nav>
+          </div>
+          <div class="col-2">
+            <nav class="accaunt">
+              <h1 class="accaunt__title">Аккаунты</h1>
+              <li class="accaunt__items"><a href="#">Войти</a></li>
+              <li class="accaunt__items"><a href="#">Регистрация</a></li>
+            </nav>
+          </div>
+          <div class="col-4">
+            <form action="">
+              <div class="email" id="email">
+                <p class="email__text">Хотите получать уведомления о самых свежих обновлениях и новостях</p>
+                <input class="email__input" id ="email__input" type="text" placeholder="E-mail">
+                <button class="btn email__btn">Подписаться</button>
+                <p class= "email__subtext">По всем вопросам: <a href="">help@unicryp.com</a></p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="container"> 
+        <div class="subfooter"> 
+          <a href="#"><img class="subfooter__items" src="image/logo-vk.svg" alt="vk"></a>
+          <a href="#"><img class="subfooter__items" src="image/logo-inst.svg" alt="inst"></a>
+          <a href="#"><img class="subfooter__items" src="image/logo-tw.svg" alt="tw"></a>
+          <a href="#"><img class="subfooter__items" src="image/logo-fc.svg" alt="fc"></a>
+          <a href="#"><img class="subfooter__items" src="image/logo-gh.svg" alt="gh"></a>
+        </div>
+        <!-- <div class="subfooter__active"> 
+          <a href="#"><img class="subfooter__items__active" src="image/logo-vk.svg" alt="vk"></a>
+          <a href="#"><img class="subfooter__items__active" src="image/logo-inst.svg" alt="inst"></a>
+          <a href="#"><img class="subfooter__items__active" src="image/logo-tw.svg" alt="tw"></a>
+          <a href="#"><img class="subfooter__items__active" src="image/logo-fc.svg" alt="fc"></a>
+          <a href="#"><img class="subfooter__items__active" src="image/logo-gh.svg" alt="gh"></a>
+        </div> -->
+      </div>
+    </footer>
+  </body>
+</html>
+<!-- Connect JavaScript-->
+<script src="js/script.js"></script>
+<script src="js/generatePassword.js"></script>
+<script>
+// Изменение Lenght
+var range = document.querySelector('#form-lenght');
+range.addEventListener('input', function () {
+    var scale_lenght = this.value
+    document.getElementById("scale_lenght").innerHTML = scale_lenght;
+    document.getElementById("result__pass").innerHTML = generatePassword();
+}, false);
+</script>
